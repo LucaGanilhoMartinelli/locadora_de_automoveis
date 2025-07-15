@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <h1>Detalhes de {{ contato.nome }}</h1>
+    <h1>Detalhes de {{ automovel.placa }}</h1>
     <p><strong>Placa:</strong> {{ automovel.placa }}</p>
     <p><strong>Marca:</strong> {{ automovel.marca }}</p>
     <p><strong>Modelo:</strong> {{ automovel.modelo }}</p>
@@ -22,6 +22,6 @@
     <p><strong>Data do Cadastro:</strong> {{ automovel.data_cadastro|date:"d/m/Y" }}</p>
     <div class="actions">
     </div>
-    <a href="{% url 'agenda:contato_lista' %}">Voltar para a lista</a>
+    <a href="{% url 'veiculos:lista_automoveis' %}">Voltar para a lista</a>
   </body>
 </html>

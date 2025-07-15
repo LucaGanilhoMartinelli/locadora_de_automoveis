@@ -14,20 +14,15 @@
 
   <body>
     <h1>Meus Automóveis</h1>
-    <a href="{% url 'veiculos/adicionar_automovel' %}" class="add-link"> Adicionar Novo Automóvel </a>
-    {% if automoveis %}
-      <ul>
-        {% for automovel in automoveis %}
-          <li>
-            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.placa }} </a>
-            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.marca }} </a>
-            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.modelo }} </a>
-            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.ano }} </a>
-            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.cor }} </a>
-            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.valor_diaria }} </a>
-            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.disponivel }} </a>
-            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.data_cadastro }} </a>
-          </li>
-      </ul>
+    <a href="{% url 'veiculos:adicionar_automovel' %}" class="add-link"> Adicionar Novo Automóvel </a>
+    <ul>
+      {% for automovel in automoveis %}
+        <li>
+          <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.placa }} </a>
+          <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.marca }} </a>
+          <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.modelo }} </a>
+        </li>
+      {% endfor %}
+    </ul>
   </body>
 </html>

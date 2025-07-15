@@ -16,7 +16,7 @@
 
   <body>
     <h1> {{ titulo_pagina }} </h1>
-    <form method="post">
+    <form method="POST">
       {% csrf_token %}
       {{ form.as_p }}
       <button type="submit"> Salvar Automóvel </button>

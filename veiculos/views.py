@@ -3,11 +3,11 @@ from .models import Automovel
 from .forms import AutomovelForm
 
 def lista_automoveis(request):
-    automoveis = Automovel.objects.all().order_by('placa')
-    return render(request, 'veiculos/lista_automoveis.html', {'automovel': automoveis})
+    automoveis = Automovel.objects.all().order_by('marca')
+    return render(request, 'veiculos/lista_automoveis.html', {'automoveis': automoveis})
 
-def detalhe_automovel(request, placa):
-    automovel = get_object_or_404(Automovel, pk=placa)
+def detalhe_automovel(request, pk):
+    automovel = get_object_or_404(Automovel, pk=pk)
     return render(request, 'veiculos/detalhe_automovel.html', {'automovel': automovel})
 
 def adicionar_automovel(request):
