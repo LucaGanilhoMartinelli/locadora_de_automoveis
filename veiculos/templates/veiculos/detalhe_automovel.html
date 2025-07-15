@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {{ automovel.placa }} - Detalhes do Automóvel </title>
+    <style>
+      body { font-family: sans-serif; margin: 20px; }
+      .actions a { margin-right: 10px; text-decoration: none; color: blue; }
+    </style>
+  </head>
+
+  <body>
+    <h1>Detalhes de {{ contato.nome }}</h1>
+    <p><strong>Placa:</strong> {{ automovel.placa }}</p>
+    <p><strong>Marca:</strong> {{ automovel.marca }}</p>
+    <p><strong>Modelo:</strong> {{ automovel.modelo }}</p>
+    <p><strong>Ano:</strong> {{ automovel.ano }}</p>
+    <p><strong>Cor:</strong> {{ automovel.cor|default:"Não informado" }}</p>
+    <p><strong>Disponibilidade:</strong> {{ automovel.disponivel }}</p>
+    <p><strong>Valor da Diária:</strong> {{ automovel.valor_diaria }}</p>
+    <p><strong>Data do Cadastro:</strong> {{ automovel.data_cadastro|date:"d/m/Y" }}</p>
+    <div class="actions">
+    </div>
+    <a href="{% url 'agenda:contato_lista' %}">Voltar para a lista</a>
+  </body>
+</html>

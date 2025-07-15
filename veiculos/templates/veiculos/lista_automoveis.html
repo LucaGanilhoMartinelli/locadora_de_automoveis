@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Automóveis</title>
+    <style>
+      body { font-family: sans-serif; margin: 20px; }
+      ul { list-style: none; padding: 0; }
+      li { margin-bottom: 5px; }
+      .actions a { margin-right: 10px; text-decoration: none; color: blue; }
+    </style>
+  </head>
+
+  <body>
+    <h1>Meus Automóveis</h1>
+    <a href="{% url 'veiculos/adicionar_automovel' %}" class="add-link"> Adicionar Novo Automóvel </a>
+    {% if automoveis %}
+      <ul>
+        {% for automovel in automoveis %}
+          <li>
+            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.placa }} </a>
+            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.marca }} </a>
+            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.modelo }} </a>
+            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.ano }} </a>
+            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.cor }} </a>
+            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.valor_diaria }} </a>
+            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.disponivel }} </a>
+            <a href="{% url 'veiculos:detalhe_automovel' automovel.pk %}"> {{ automovel.data_cadastro }} </a>
+          </li>
+      </ul>
+  </body>
+</html>
